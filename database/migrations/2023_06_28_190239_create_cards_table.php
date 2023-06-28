@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
+
+            $table->string('name');
+            $table->foreignId('desk_list_id')->constrained();
+
             $table->timestamps();
         });
     }
